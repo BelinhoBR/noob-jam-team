@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://6l7nc17dvakr"]
+
+[ext_resource type="Texture2D" uid="uid://cpbyd4adlq55v" path="res://icon.svg" id="1_ci6au"]
+[ext_resource type="PackedScene" uid="uid://clekoxvpjv3fa" path="res://Scenes/Catbox.tscn" id="2_26yhd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_26yhd"]
+distance = 60.081635
+
+[node name="Map" type="Node2D" unique_id=1764831798]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1664339545]
+position = Vector2(540, 607)
+scale = Vector2(3.296875, 0.3828125)
+texture = ExtResource("1_ci6au")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon" unique_id=2001178633]
+shape = SubResource("WorldBoundaryShape2D_26yhd")
+
+[node name="Catbox" parent="." unique_id=1900732100 instance=ExtResource("2_26yhd")]
+position = Vector2(513, 474)
