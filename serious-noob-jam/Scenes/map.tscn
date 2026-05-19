@@ -17,4 +17,4 @@ texture = ExtResource("1_ci6au")
 shape = SubResource("WorldBoundaryShape2D_26yhd")
 
 [node name="Catbox" parent="." unique_id=1900732100 instance=ExtResource("2_26yhd")]
-position = Vector2(513, 474)
+position = Vector2(453, 509)
