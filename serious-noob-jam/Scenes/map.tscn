@@ -8,12 +8,17 @@ distance = 60.081635
 
 [node name="Map" type="Node2D" unique_id=1764831798]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1664339545]
-position = Vector2(540, 607)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=444183103]
+position = Vector2(0, 6.1035156e-05)
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D" unique_id=1664339545]
+position = Vector2(540, 606.99994)
 scale = Vector2(3.296875, 0.3828125)
 texture = ExtResource("1_ci6au")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon" unique_id=2001178633]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2001178633]
+position = Vector2(540, 606.99994)
+scale = Vector2(3.296875, 0.3828125)
 shape = SubResource("WorldBoundaryShape2D_26yhd")
 
 [node name="Catbox" parent="." unique_id=1900732100 instance=ExtResource("2_26yhd")]
