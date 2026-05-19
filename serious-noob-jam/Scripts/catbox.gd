@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 200
 @export var jump_speed = -400
 @export var gravity = 800
+@export var push_force = 100 #set all movable objects to layer 4 to avoid infinite speed because of moving_platform layer check on CharacterBody2D
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
@@ -10,7 +11,10 @@ func _physics_process(delta: float) -> void:
 	update_gravity(delta)
 	movement()
 	move_and_slide()
-
+	for i in get_slide_collision_count():
+		var col = get_slide_collision(i)
+		if col.get_collider() is RigidBody2D:
+			col.get_collider().apply_central_impulse(-col.get_normal() * push_force)
 
 func movement():
 	var direction = Input.get_axis("move_left", "move_right")

@@ -69,6 +69,9 @@ animations = [{
 }]
 
 [node name="Catbox" type="CharacterBody2D" unique_id=1900732100]
+collision_layer = 2
+collision_mask = 11
+platform_floor_layers = 4294967287
 script = ExtResource("1_ltava")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=328524755]
