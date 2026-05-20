@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cpbyd4adlq55v" path="res://icon.svg" id="1_ci6au"]
 [ext_resource type="PackedScene" uid="uid://clekoxvpjv3fa" path="res://Scenes/Catbox.tscn" id="2_26yhd"]
 [ext_resource type="PackedScene" uid="uid://cttrj7ess1xee" path="res://Scenes/object.tscn" id="2_p3ir5"]
+[ext_resource type="Script" uid="uid://g61pv3gb61pd" path="res://Scenes/catbox.gd" id="3_q0mm3"]
 [ext_resource type="PackedScene" uid="uid://blor3rpu2i5jl" path="res://Scenes/platform.tscn" id="4_myvm1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_26yhd"]
@@ -25,10 +26,10 @@ scale = Vector2(3.296875, 0.3828125)
 shape = SubResource("WorldBoundaryShape2D_26yhd")
 
 [node name="Catbox" parent="." unique_id=1900732100 instance=ExtResource("2_26yhd")]
-position = Vector2(453, 509)
+position = Vector2(454, 509)
+script = ExtResource("3_q0mm3")
 
-[node name="object" parent="." unique_id=376307921 instance=ExtResource("2_p3ir5")]
-position = Vector2(574, 530)
+[node name="Camera2D" type="Camera2D" parent="Catbox" unique_id=926594819]
 
 [node name="Platform" parent="." unique_id=1838004511 instance=ExtResource("4_myvm1")]
 position = Vector2(681, 486)
@@ -37,17 +38,22 @@ position = Vector2(681, 486)
 position = Vector2(286, 490)
 scale = Vector2(6, 2)
 
-[node name="RigidBody2D" parent="." unique_id=1943526069 instance=ExtResource("2_p3ir5")]
-position = Vector2(284, 450)
+[node name="boxes" type="Node" parent="." unique_id=916567004]
 
-[node name="RigidBody2D2" parent="." unique_id=744655299 instance=ExtResource("2_p3ir5")]
-position = Vector2(285, 401)
+[node name="RigidBody2D5" parent="boxes" unique_id=1469856298 instance=ExtResource("2_p3ir5")]
+position = Vector2(683, 387)
 
-[node name="RigidBody2D3" parent="." unique_id=1129304412 instance=ExtResource("2_p3ir5")]
-position = Vector2(283, 355)
-
-[node name="RigidBody2D4" parent="." unique_id=1239276528 instance=ExtResource("2_p3ir5")]
+[node name="RigidBody2D4" parent="boxes" unique_id=1239276528 instance=ExtResource("2_p3ir5")]
 position = Vector2(682, 441)
 
-[node name="RigidBody2D5" parent="." unique_id=1469856298 instance=ExtResource("2_p3ir5")]
-position = Vector2(683, 387)
+[node name="RigidBody2D3" parent="boxes" unique_id=1129304412 instance=ExtResource("2_p3ir5")]
+position = Vector2(283, 355)
+
+[node name="RigidBody2D2" parent="boxes" unique_id=744655299 instance=ExtResource("2_p3ir5")]
+position = Vector2(285, 401)
+
+[node name="RigidBody2D" parent="boxes" unique_id=1943526069 instance=ExtResource("2_p3ir5")]
+position = Vector2(284, 450)
+
+[node name="object" parent="boxes" unique_id=376307921 instance=ExtResource("2_p3ir5")]
+position = Vector2(574, 530)
