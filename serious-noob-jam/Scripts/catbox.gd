@@ -43,21 +43,21 @@ var hold_threshold = 3.0
 var dash_speed = 600.0
 var is_dashing = false
 
-func _process(delta):
+# Handle dash input
 	if Input.is_action_pressed("dash"):
-		hold_time += delta
-		var progress = hold_time / hold_threshold
-		print("Hold progress: ", progress * 100, "%")
-		
-		if hold_time >= hold_threshold:
-			execute_dash()
-			hold_time = 0.0
-	else:
-		hold_time = 0.0
+hold_time += delta
+var progress = hold_time / hold_threshold
+print("Hold progress: ", progress * 100, "%")
+
+if hold_time >= hold_threshold:
+execute_dash()
+hold_time = 0.0
+else:
+hold_time = 0.0
 
 
 func execute_dash():
-	var input_vector = Input.get_vector("L_dash", "R_dash", "up_dash", "Down_dash")
-	velocity = input_vector.normalized() * dash_speed
-	is_dashing = true
-	print("dash")
+var input_vector = Input.get_vector("L_dash", "R_dash", "up_dash", "Down_dash")
+velocity = input_vector.normalized() * dash_speed
+is_dashing = true
+print("dash")
