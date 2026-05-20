@@ -27,6 +27,8 @@ shape = SubResource("WorldBoundaryShape2D_26yhd")
 [node name="Catbox" parent="." unique_id=1900732100 instance=ExtResource("2_26yhd")]
 position = Vector2(453, 509)
 
+[node name="Camera2D" type="Camera2D" parent="Catbox" unique_id=487301913]
+
 [node name="object" parent="." unique_id=376307921 instance=ExtResource("2_p3ir5")]
 position = Vector2(574, 530)
 
@@ -37,17 +39,19 @@ position = Vector2(681, 486)
 position = Vector2(286, 490)
 scale = Vector2(6, 2)
 
-[node name="RigidBody2D" parent="." unique_id=1943526069 instance=ExtResource("2_p3ir5")]
-position = Vector2(284, 450)
+[node name="all ball" type="Node" parent="." unique_id=1407095337]
 
-[node name="RigidBody2D2" parent="." unique_id=744655299 instance=ExtResource("2_p3ir5")]
-position = Vector2(285, 401)
+[node name="RigidBody2D5" parent="all ball" unique_id=1469856298 instance=ExtResource("2_p3ir5")]
+position = Vector2(683, 387)
 
-[node name="RigidBody2D3" parent="." unique_id=1129304412 instance=ExtResource("2_p3ir5")]
+[node name="RigidBody2D3" parent="all ball" unique_id=1129304412 instance=ExtResource("2_p3ir5")]
 position = Vector2(283, 355)
 
-[node name="RigidBody2D4" parent="." unique_id=1239276528 instance=ExtResource("2_p3ir5")]
+[node name="RigidBody2D4" parent="all ball" unique_id=1239276528 instance=ExtResource("2_p3ir5")]
 position = Vector2(682, 441)
 
-[node name="RigidBody2D5" parent="." unique_id=1469856298 instance=ExtResource("2_p3ir5")]
-position = Vector2(683, 387)
+[node name="RigidBody2D2" parent="all ball" unique_id=744655299 instance=ExtResource("2_p3ir5")]
+position = Vector2(285, 401)
+
+[node name="RigidBody2D" parent="all ball" unique_id=1943526069 instance=ExtResource("2_p3ir5")]
+position = Vector2(284, 450)
