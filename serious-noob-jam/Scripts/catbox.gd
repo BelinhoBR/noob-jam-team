@@ -41,6 +41,7 @@ func update_gravity(delta):
 var hold_time = 0.0
 var hold_threshold = 3.0
 var dash_speed = 600.0
+var is_dashing = false
 
 func _process(delta):
 	if Input.is_action_pressed("dash"):
@@ -54,8 +55,9 @@ func _process(delta):
 	else:
 		hold_time = 0.0
 
+
 func execute_dash():
-	var input_vector = Input.get_vector("R_dash", "L_dash", "up_dash", "Down_dash")
+	var input_vector = Input.get_vector("L_dash", "R_dash", "up_dash", "Down_dash")
 	velocity = input_vector.normalized() * dash_speed
-	move_and_slide()  # Actually move the character!
+	is_dashing = true
 	print("dash")
