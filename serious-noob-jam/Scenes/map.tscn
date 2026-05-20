@@ -27,7 +27,7 @@ shape = SubResource("WorldBoundaryShape2D_26yhd")
 [node name="Catbox" parent="." unique_id=1900732100 instance=ExtResource("2_26yhd")]
 position = Vector2(453, 509)
 
-[node name="Camera2D" type="Camera2D" parent="Catbox" unique_id=487301913]
+[node name="Camera2D" type="Camera2D" parent="Catbox" unique_id=989182893]
 
 [node name="object" parent="." unique_id=376307921 instance=ExtResource("2_p3ir5")]
 position = Vector2(574, 530)
